@@ -1,0 +1,71 @@
+/*==================== VARIABLES CSS ====================*/
+:root {
+	/*========== RENDER 1REM = 10PX =============*/
+	font-size: 62.5%;
+	/*========== Colors ==========*/
+	--color-dark: #39423e;
+	--color-lighter: #b8c4c2;
+	--color-light: #8da6aa;
+  }
+  
+  body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	background-image: url(../images/background.jpg);
+	background-repeat:no-repeat ;
+	background-size: cover;
+	background-position: center;
+  }
+
+  .clock {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+  }
+  
+  .clock-face {
+	border: 1rem solid var(--color-dark);
+	border-radius: 50%;
+	width: 25rem;
+	height: 25rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	color: #ffffff;
+	background: hsla(0, 0%, 21%, 0.425);
+	box-shadow: 0 0 .5rem #fff, 0 0 .5rem #fff, 0 0 1rem #fff, 0 0 2rem #b8c4c2,
+	  0 0 3rem #b8c4c2, 0 0 4rem #b8c4c2, 0 0 5rem #b8c4c2, 0 0 7rem #b8c4c2;
+  }
+  
+  @media (min-width: 900px) {
+	.clock-face {
+	  width: 50rem;
+	  height: 50rem;
+	}
+  }
+  
+  .hand {
+	background-color: var(--color-light);
+	width: 45%;
+	height: 0.7rem;
+	right: 50%;
+	position: absolute;
+	transform-origin: 100%;
+	transition: all 0.3s;
+	transform: rotate(90deg);
+  }
+  
+  .hand-seconds {
+	background-color: var(--color-lighter);
+  }
+  
+  .hand-mintues {
+	background-color: var(--color-light);
+  }
+  
+  .hand-hours {
+	background-color: var(--color-dark);
+  }
