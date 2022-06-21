@@ -1,3 +1,11 @@
+let alarmTime = null;
+let alarmTimeOut = null;
+const audio = new Audio(
+  "https://assets.mixkit.co/sfx/preview/mixkit-alarm-digital-clock-beep-989.mp3"
+);
+
+audio.loop = true;
+
 function setDates() {
   const handSeconds = document.querySelector(".hand-seconds");
   const handMinutes = document.querySelector(".hand-mintues");
@@ -19,3 +27,32 @@ function setDates() {
 }
 
 setInterval(setDates, 1000);
+
+const alarm = document.getElementById("alarm");
+
+function setAlarmTime(value) {
+  alarmTime = value;
+  // console.log(alarmTime);
+}
+
+function setAlarm() {
+  if (alarmTime) {
+    const current = new Date();
+    const timeToAlarm = new Date(alarmTime);
+    if (timeToAlarm > current) {
+      const timeOut = timeToAlarm.getTime() - current.getTime();
+      // to set an alarm => setTimeout(event, time)
+      alarmTimeOut = setTimeout(() => audio.play(), timeOut);
+      alert("Alarm set");
+    }
+  }
+}
+
+function ClearAlarm() {
+  audio.pause();
+  if (alarmTimeOut) {
+    // clearTimeout(tiner out should be a timer type that's why we stored in alarmTimeOut);
+    clearTimeout(alarmTimeOut);
+    alert("alarmed cleared");
+  }
+}

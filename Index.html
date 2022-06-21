@@ -8,11 +8,28 @@
     <title>Digital Clock</title>
   </head>
   <body>
-    <div class="clock">
-      <div class="clock-face">
-        <span class="hand hand-seconds"></span>
-        <span class="hand hand-mintues"></span>
-        <span class="hand hand-hours"></span>
+    <div class="container">
+      <div class="clock">
+        <div class="clock-face">
+          <span class="hand hand-seconds"></span>
+          <span class="hand hand-mintues"></span>
+          <span class="hand hand-hours"></span>
+        </div>
+      </div>
+      <div id="alarm">
+        <input
+          onchange="setAlarmTime(this.value)"
+          name="alarmTime"
+          type="datetime-local"
+        />
+        <div class="controls">
+          <button onclick="setAlarm()" class="button set-alarm">
+            set-alarm
+          </button>
+          <button onclick="ClearAlarm()" class="button clear-alarm">
+            clear-alarm
+          </button>
+        </div>
       </div>
     </div>
     <script src="main.js"></script>
