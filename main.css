@@ -19,6 +19,39 @@
 	background-position: center;
   }
 
+  .container {
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	align-items: center;
+  }
+
+  #alarm {
+	padding: 10px;
+	background-color: #8da6aa;
+	border-radius: 5%;
+  }
+
+  .controls {
+	display: flex;
+	justify-content: space-between;
+	padding: 5%;
+  }
+
+  .set-alarm {
+	background-color: rgb(57, 226, 57);
+	border: none;
+	border-radius: 10%;
+  }
+
+  .clear-alarm {
+	background-color: rgb(223, 79, 43);
+	border: none;
+	border-radius: 10%;
+  }
+
+
   .clock {
 	display: flex;
 	justify-content: center;
